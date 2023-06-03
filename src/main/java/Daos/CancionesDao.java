@@ -36,7 +36,7 @@ public class CancionesDao {
         return listaCanciones;
     }
 
-    public void anadirFavoritos(Canciones canciones) {
+    public void anadirFavoritos(int idcancion) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -49,10 +49,10 @@ public class CancionesDao {
         try (Connection connection = DriverManager.getConnection(url, "root", "root");
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
 
-            pstmt.setInt(1, canciones.getIdcancion());
-            pstmt.setString(2, canciones.getNombre_cancion());
-            pstmt.setString(3, canciones.getBanda());
-            pstmt.setBoolean(4, canciones.getEstadoFavorito());
+            pstmt.setInt(1, idcancion);
+            //pstmt.setString(2, canciones.getNombre_cancion());
+            //pstmt.setString(3, canciones.getBanda());
+            //pstmt.setInt(4, canciones.getEstadoFavorito());
 
             pstmt.executeUpdate();
 

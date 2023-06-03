@@ -1,10 +1,27 @@
 package Beans;
 
-public class Canciones {
+public class Playlists {
+    private int idPlaylist;
+    private String nombre_playlist;
     private int idcancion;
     private String nombre_cancion;
     private String banda;
-    private int estadoFavorito;
+
+    public int getIdPlaylist() {
+        return idPlaylist;
+    }
+
+    public void setIdPlaylist(int idPlaylist) {
+        this.idPlaylist = idPlaylist;
+    }
+
+    public String getNombre_playlist() {
+        return nombre_playlist;
+    }
+
+    public void setNombre_playlist(String nombre_playlist) {
+        this.nombre_playlist = nombre_playlist;
+    }
 
     public int getIdcancion() {
         return idcancion;
@@ -28,14 +45,5 @@ public class Canciones {
 
     public void setBanda(String banda) {
         this.banda = banda;
-    }
-
-
-    public int getEstadoFavorito() {
-        return estadoFavorito;
-    }
-
-    public void setEstadoFavorito(int estadoFavorito) {
-        this.estadoFavorito = estadoFavorito;
     }
 }

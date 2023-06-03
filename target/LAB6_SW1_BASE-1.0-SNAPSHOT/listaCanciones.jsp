@@ -27,7 +27,7 @@
                         <th>ID</th>
                         <th>CANCION</th>
                         <th>BANDA</th>
-                        <th>Añadir a favoritos</th>
+                        <th></th>
                     </thead>
                     <%
                         for (Canciones canciones : listaCanciones) {
@@ -40,7 +40,8 @@
                         <td><%=canciones.getBanda()%>
                         </td>
                         <td>
-                            <a> <i class ="bi <%=(canciones.getEstadoFavorito() == Boolean.TRUE)?"bi-heart heart-icon" : "bi-heart-fill heart-icon-liked"%>"data-toggle="tooltop" data-placement="top" title="Añadir a favoritos"></i>
+                            <a> href="<%=request.getContextPath()%>/listaFavoritos?a=miFavorito&id=<%canciones.getIdcancion();%>">
+                                <i class ="bi <%=(canciones.getEstadoFavorito() == Boolean.TRUE)?"bi-heart heart-icon" : "bi-heart-fill heart-icon-liked"%>"data-toggle="tooltop" data-placement="top" title="Añadir a favoritos"></i>
                             </a>
                         </td>
 

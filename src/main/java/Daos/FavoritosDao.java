@@ -15,7 +15,7 @@ public class FavoritosDao {
             e.printStackTrace();
         }
 
-        String sql = "SELECT idcancion as 'ID', nombre_cancion as 'NOMBRE', banda as 'BANDA' from cancion where estadoFavorito = TRUE";
+        String sql = "SELECT idcancion as 'ID', nombre_cancion as 'NOMBRE', banda as 'BANDA' from cancion where estadoFavorito = 1";
         String url = "jdbc:mysql://localhost:3306/lab6sw1?serverTimezone=America/Lima";
         try (Connection connection = DriverManager.getConnection(url, "root", "root");
              Statement stmt = connection.createStatement();

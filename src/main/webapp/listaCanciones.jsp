@@ -40,8 +40,8 @@
                         <td><%=canciones.getBanda()%>
                         </td>
                         <td>
-                            <a> href="<%=request.getContextPath()%>/listaFavoritos?a=miFavorito&id=<%canciones.getIdcancion();%>">
-                                <i class ="bi <%=(canciones.getEstadoFavorito() == Boolean.TRUE)?"bi-heart heart-icon" : "bi-heart-fill heart-icon-liked"%>"data-toggle="tooltop" data-placement="top" title="Añadir a favoritos"></i>
+                            <a> href="<%=request.getContextPath()%>/listaFavoritos?">
+                                <i class ="bi <%=(canciones.getEstadoFavorito() == 1)?"bi-heart heart-icon" : "bi-heart-fill heart-icon-liked"%>"data-toggle="tooltop" data-placement="top" title="Añadir a favoritos"></i>
                             </a>
                         </td>
 
