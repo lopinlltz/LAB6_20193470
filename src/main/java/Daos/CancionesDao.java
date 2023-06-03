@@ -16,7 +16,7 @@ public class CancionesDao {
         }
 
         String sql = "select * from cancion";
-        String url = "jdbc:mysql://localhost:3306/lab6sw1";
+        String url = "jdbc:mysql://localhost:3306/lab6sw1?serverTimezone=America/Lima";
         try (Connection connection = DriverManager.getConnection(url, "root", "root");
              Statement stmt = connection.createStatement();
              ResultSet resultSet = stmt.executeQuery(sql)) {
@@ -34,5 +34,30 @@ public class CancionesDao {
         }
 
         return listaCanciones;
+    }
+
+    public void anadirFavoritos(Canciones canciones) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String sql = "UPDATE cancion SET estadoFavorito = true WHERE id = ?";
+        String url = "jdbc:mysql://localhost:3306/lab6sw1?serverTimezone=America/Lima";
+
+        try (Connection connection = DriverManager.getConnection(url, "root", "root");
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+
+            pstmt.setInt(1, canciones.getIdcancion());
+            pstmt.setString(2, canciones.getNombre_cancion());
+            pstmt.setString(3, canciones.getBanda());
+            pstmt.setBoolean(4, canciones.getEstadoFavorito());
+
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

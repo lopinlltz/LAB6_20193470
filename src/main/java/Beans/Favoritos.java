@@ -1,10 +1,11 @@
 package Beans;
 
-public class Canciones {
+public class Favoritos {
     private int idcancion;
     private String nombre_cancion;
     private String banda;
     private Boolean estadoFavorito;
+
 
     public int getIdcancion() {
         return idcancion;

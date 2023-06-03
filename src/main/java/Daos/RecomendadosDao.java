@@ -16,7 +16,7 @@ public class RecomendadosDao {
         }
 
         String sql = "select c.idcancion as 'ID', c.nombre_cancion as 'NOMBRE', c.banda as 'BANDA' from reproduccion r left join cancion c on(c.idcancion = r.cancion_idcancion) group by cancion_idcancion having count(*) >2 order by count(*) desc";
-        String url = "jdbc:mysql://localhost:3306/lab6sw1";
+        String url = "jdbc:mysql://localhost:3306/lab6sw1?serverTimezone=America/Lima";
         try (Connection connection = DriverManager.getConnection(url, "root", "root");
              Statement stmt = connection.createStatement();
              ResultSet resultSet = stmt.executeQuery(sql)) {
