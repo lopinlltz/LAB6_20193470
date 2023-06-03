@@ -33,6 +33,9 @@
             <li class="nav-item">
                 <a class="nav-link <%=request.getParameter("page").equals("favoritos")? "active": "" %>" href="<%=request.getContextPath()%>/listaFavoritos">Favoritos</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link <%=request.getParameter("page").equals("playlists")? "active": "" %>" href="<%=request.getContextPath()%>/playlists">Playlists</a>
+            </li>
 
         </ul>
     </div>

@@ -40,9 +40,10 @@
                         <td><%=canciones.getBanda()%>
                         </td>
                         <td>
-                            <a> href="<%=request.getContextPath()%>/listaFavoritos?">
+                            <a> href="<%=request.getContextPath()%>/listaFavoritos">
                                 <i class ="bi <%=(canciones.getEstadoFavorito() == 1)?"bi-heart heart-icon" : "bi-heart-fill heart-icon-liked"%>"data-toggle="tooltop" data-placement="top" title="Añadir a favoritos"></i>
                             </a>
+                            <!--<a class="btn btn-warning" href="<%=request.getContextPath()%>/listaFavoritos">Añadir a favoritos</a>->
                         </td>
 
                     </tr>
